@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "279837354257",
+    "project_id": "zendesk-sunshine-test",
+    "storage_bucket": "zendesk-sunshine-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279837354257:android:4fcce07ffc7e911166c4b0",
+        "android_client_info": {
+          "package_name": "com.awesometsproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279837354257-8kqiotuv41238hhm9jvueppgslsr6jcg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBECh_ylVgemQ4NVDO6jqkk8F6ZIV60QU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279837354257-8kqiotuv41238hhm9jvueppgslsr6jcg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279837354257:android:8e15695804f41a2366c4b0",
+        "android_client_info": {
+          "package_name": "com.zendesksunshinetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279837354257-8kqiotuv41238hhm9jvueppgslsr6jcg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBECh_ylVgemQ4NVDO6jqkk8F6ZIV60QU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279837354257-8kqiotuv41238hhm9jvueppgslsr6jcg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

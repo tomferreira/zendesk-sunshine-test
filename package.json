@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "17.0.2",
-    "react-native": "0.68.0"
+    "react-native": "0.68.0",
+    "react-native-smooch": "git+https://github.com/billnbell/react-native-sunshine-conversations.git#1.0.39"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

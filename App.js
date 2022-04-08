@@ -13,6 +13,7 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
+  Button,
   Text,
   useColorScheme,
   View,
@@ -20,11 +21,10 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+  Header
 } from 'react-native/Libraries/NewAppScreen';
+
+import { Smooch } from 'react-native-smooch';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -70,20 +70,11 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          <Button
+            onPress={() => Smooch.show()}
+            title="Abrir chat"
+            color="#841584"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

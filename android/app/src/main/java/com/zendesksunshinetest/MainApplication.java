@@ -2,6 +2,7 @@ package com.zendesksunshinetest;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -12,6 +13,11 @@ import com.facebook.soloader.SoLoader;
 import com.zendesksunshinetest.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+
+import io.smooch.core.Settings;
+import io.smooch.core.Smooch;
+import io.smooch.core.SmoochCallback;
+import io.smooch.core.InitializationStatus;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -55,6 +61,24 @@ public class MainApplication extends Application implements ReactApplication {
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     SoLoader.init(this, /* native exopackage */ false);
+
+    //String integrationId = (BuildConfig.APP_ENV == "PROD") ? 
+    //  BuildConfig.PROD_SMOOCH_INTEGRATION_ID_ANDROID : BuildConfig.STAGE_SMOOCH_INTEGRATION_ID_ANDROID;
+
+    Smooch.init(this, new Settings("59a93c829200175800018222"), new SmoochCallback<InitializationStatus>() {
+      @Override
+      public void run(Response<InitializationStatus> response) {
+        // Handle init result
+        Log.d("SmoothInit", String.valueOf(response));
+
+        if (response.getData() == InitializationStatus.SUCCESS) {
+            // Your code after init is complete
+        } else {
+            // Something went wrong during initialization
+        }
+      }
+    });
+
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
