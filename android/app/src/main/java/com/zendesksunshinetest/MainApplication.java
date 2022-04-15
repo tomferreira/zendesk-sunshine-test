@@ -62,10 +62,9 @@ public class MainApplication extends Application implements ReactApplication {
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     SoLoader.init(this, /* native exopackage */ false);
 
-    //String integrationId = (BuildConfig.APP_ENV == "PROD") ? 
-    //  BuildConfig.PROD_SMOOCH_INTEGRATION_ID_ANDROID : BuildConfig.STAGE_SMOOCH_INTEGRATION_ID_ANDROID;
+    String integrationId = BuildConfig.SMOOCH_INTEGRATION_ID;
 
-    Smooch.init(this, new Settings("59a93c829200175800018222"), new SmoochCallback<InitializationStatus>() {
+    Smooch.init(this, new Settings(integrationId), new SmoochCallback<InitializationStatus>() {
       @Override
       public void run(Response<InitializationStatus> response) {
         // Handle init result

@@ -142,6 +142,9 @@ android {
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
+        // Environment variables used on native code (.java)
+        buildConfigField 'String', "SMOOCH_INTEGRATION_ID", "\"625491fdeb13b300f390f05b\""
+
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
             externalNativeBuild {
