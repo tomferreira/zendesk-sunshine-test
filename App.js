@@ -26,31 +26,21 @@ import {
 
 import { Smooch } from 'react-native-smooch';
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+const showChat = () => {
+  var userId = "555555";
+  var jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImFwcF82MjU0OWNiYjIzODQxOTAwZjMzYjc2NzUifQ.eyJzY29wZSI6ImFwcFVzZXIiLCJ1c2VySWQiOiI1NTU1NTUiLCJpYXQiOjE2NTAwNDY4MzJ9.oDdJSMP8bIaUjpH5lRADSYe3Fk1L5p6k0_zn1ozsJWc";
+  
+  Smooch.login(userId, jwt)
+    .then(() => {
+      Smooch.setFirstName("Maria");
+      Smooch.setLastName("Farias");
+      Smooch.setEmail("maria.farias@gmail.com");
+
+      Smooch.setUserProperties({ "userId2": userId, "premiumUser": true });
+
+      Smooch.show();
+    }, console.error);
+}
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -71,7 +61,7 @@ const App: () => Node = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Button
-            onPress={() => Smooch.show()}
+            onPress={() => showChat()}
             title="Abrir chat"
             color="#841584"
           />
