@@ -5,6 +5,7 @@
 #import <React/RCTRootView.h>
 
 #import <React/RCTAppSetupUtils.h>
+#import <Smooch/Smooch.h>
 
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
@@ -48,6 +49,18 @@
   } else {
     rootView.backgroundColor = [UIColor whiteColor];
   }
+
+  // Initialize Smooch - these instructions are also available on [app.smooch.io](https://app.smooch.io)
+    SKTSettings *customSettings = [SKTSettings settingsWithIntegrationId:@"62556fcc29bb0000f32a81ec"];
+
+    customSettings.conversationAccentColor = [UIColor colorWithRed: 1.00 green: 0.50 blue: 0.63 alpha: 1.00];
+    customSettings.userMessageTextColor = [UIColor whiteColor];
+    customSettings.conversationStatusBarStyle = UIStatusBarStyleLightContent;
+
+    [Smooch initWithSettings:customSettings completionHandler:^(NSError * _Nullable error, NSDictionary * _Nullable userInfo) {
+        NSLog(@"Smooch initWithSettings");
+        // Your code after init is complete
+    }];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
